@@ -14,7 +14,7 @@ class Perceptron:
     def unit_func(self, x):
         return np.where(x>=0,1,0)
     
-    def train():
+    def train(self,X,y):
         samples, features = X.shape
         self.bias = 0
         self.weights = np.zeros(features)
@@ -29,7 +29,8 @@ class Perceptron:
                 self.weights += update * x_i
                 self.bias += update 
 
-    def predict():
+    def predict(self,X):
         linear_output = np.dot(X,self.weights) # equals = wT (transpose of the weigts vector) 
         y_predicted = self.activation_function(linear_output)
         return y_predicted
+    
